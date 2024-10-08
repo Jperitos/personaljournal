@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    position: relative;
+    right: 50px;
+    gap: 50px; 
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.nav-links a:active{
+    color:#38b6ff;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.go-pro-btn {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.go-pro-btn:hover {
+    background-color: #008fcc;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.icons img {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* notifications  */
+.header-actions {
+    position: relative; /* To position the notification popup */
+}
+
+.notification-bell {
+    cursor: pointer;
+    position: relative;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
+.notification-popup {
+    position: absolute;
+    top: 70px; 
+    left: 1500px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 200px; /* Adjust width as needed */
+    padding: 10px;
+}
+
+.notification-popup h4 {
+    margin: 0 0 10px 0;
+}
+
+.notification-popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-popup li {
+    padding: 5px 0;
+}
+
+main {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.story-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    width: 80%;
+    text-align: center;
+}
+.story-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.story-section h5 {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+.toolbar-container {
+    position: relative;
+    width: 60%; 
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000; 
+    bottom: 100px;
+    left: 400px;
+}
+
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.toolbar button,
+.toolbar select {
+    padding: 8px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.toolbar button:hover,
+.toolbar select:hover {
+    background-color: #ddd;
+}
+
+.toggle-toolbar-btn {
+    padding: 8px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    left: 32%;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+
+.editor-container {
+ 
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.entry-title {
+    position: relative;
+    right: 32.5%;
+    width: 20%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}   
+
+.toolbar {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.toolbar select,
+.toolbar button {
+    background-color: #fff;
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.toolbar button:hover,
+.toolbar select:hover {
+    background-color: #ddd;
+}
+
+.editor {
+    min-height: 400px;
+    max-width:1200px;
+    padding: 15px;
+    margin-inline: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(124, 124, 124, 0.1);
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: left;
+}
+
+main {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.story-section {
+    position: relative;
+    bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+
+}
+/* textarea {
+    width: 88%;
+    height: 400px;
+    margin: 30px 0;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+} */
+
+.date-display {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+    border-style: solid;
+    color: black;
+    margin-bottom: 15px;
+}
+
+
+.char-counter {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 20px;
+}
+.save-btn {
+    background-color: #002366;
+    color: white;
+    border-radius: 50px;
+    font-size: 15px;
+    padding: 10px 50px;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+}
+
+.save-btn:hover {
+    background-color: #023594;
+    color: rgb(0, 0, 0);
+}
+
+/* my journal na css */
+#journal {
+    display: none; 
+   
+}
+
+.journal-wrapper{
+    width: 1500px;
+    height: auto;
+}
+.hidden {
+    display: none; 
+}
+
+.journal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    
+}
+
+.journal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.journal-title span{
+    color: #002366;
+    font-weight: 800;
+}
+.searchbar-journal {
+    width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+.date-journal{
+    width: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    margin-right: 20px;
+}
+
+/* cointainer sa journal nanabuhat */
+.journal-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.journal-card {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    /* gap: 10px; */
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 280px;
+}
+
+.journal-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.emoji {
+    font-size: 2rem;
+    position: relative;
+    right: 25px;
+}
+
+.card-title {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+
+/* journal contents css */
+.top-jcontent{
+    padding: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top-jcontent i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.top-jcontent i:hover{
+    color: #2a63ce;
+}
+.icon-jcontent i{ 
+    font-size: 20px;
+}
+.icon-jcontent i:hover{
+    cursor: pointer;
+}
+
+.bxs-folder:hover{
+    color:#2a63ce;
+}
+.bx-trash:hover{
+    color: red;
+}
+.journalContent-container{
+    margin-block: 10px;
+    width: 1500px;
+    padding: 20px;
+    height: 65vh;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+.header-journal-contents{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p{
+        font-size: 15px;
+    }
+}
+
+.selected-journal-content{
+    padding: 20px;
+    display: flex;
+    flex: wrap;
+}
+.button-journal-content{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.saveChanges-btn{
+    background-color: #002366;
+    color: white;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+    border: none;   
+}
+.saveChanges-btn:hover{
+    cursor: pointer;
+
+}
+
+/* PROFILE SETTINGS */
+/* settings section css */
+.profile-container {
+    background-color: #FFFFFF;   
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 50px;
+
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+  
+}
+
+.greeting h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.greeting p {
+    margin: 0;
+    color: #777; 
+}
+
+.update-btn {
+    position: relative;
+    left: 55%;
+    background-color: #0D3A64; 
+    color: #FFFFFF; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background-color: #0A2B4C;
+}
+/* container sa ubos settings */
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    width: 48%; 
+    margin-right: 2%;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.edit-btn{
+    position: relative;
+    left: 88%;
+    top: 10px;
+    background-color: #0D3A64; 
+    color: #FFFFFF; 
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+/* go pro section */
+
+#go-pro-section {
+    background-color: #f9f9f9; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 20px auto; 
+    max-width: 600px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; 
+}
+
+#go-pro-section h2 {
+    font-size: 24px; 
+    color: #333; 
+    margin-bottom: 15px; 
+}
+
+#go-pro-section p {
+    font-size: 16px;
+    color: #666; 
+    margin-bottom: 20px; 
+}
+
+#go-pro-section ul {
+    list-style: none; 
+    padding: 0;
+    margin: 20px 0; 
+}
+
+#go-pro-section li {
+    padding: 8px 0; 
+    color: #002366; 
+    font-size: 16px; 
+}
+
+#subscribe-btn {
+    background-color: #002366; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
