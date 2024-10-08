@@ -259,11 +259,11 @@ body {
     margin-block: 10px;
     font-size: 0.9rem;
   }
-  .login-link{
+  .loginlink{
     text-decoration: none;
     color: #000;
   }
-  .login-link :hover{
+  .loginlink :hover{
     color: #007bff;;
   }
   .signup1 span{
