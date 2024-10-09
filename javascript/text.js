@@ -51,6 +51,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+ //return to journal-count
+function toogleReturn() {
+    // Assuming you want to toggle visibility or switch views to return to the journal wrapper
+    var journalWrapper = document.getElementById("journal");
+    var journalContents = document.getElementById
+    ("journal-contents")
+    
+    journalWrapper.style.display = 'block';
+    journalContents.style.display = 'none';
+    
+    // Alternatively, if you want to go back to a previous page:
+    // window.history.back();
+}
+
 
 // JOURNAL HIDE THEN E CALL IGKA TOPLOK
 
