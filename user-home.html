@@ -48,16 +48,16 @@
 
     <main>
       <section class="story-section">
-        <h2>Welcome Damoslo!</h2>
-        <h5>Where Your Thoughts Find Their Story</h5>
+        <!-- <h2>Welcome Damoslo!</h2>
+        <h5>Where Your Thoughts Find Their Story</h5> -->
         
         <input type="text" class="entry-title" placeholder="Entry Title">
         <!-- <div class="date-display">
           <span id="liveDate"></span>
       </div> -->
-      <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
+      <!-- <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button> -->
 
-<div class="toolbar-container hidden">
+<!-- <div class="toolbar-container hidden"> -->
     <div class="toolbar">
         <label for="fontStyle">Font: </label>
         <select id="fontStyle" onchange="format('fontName', this.value)">
@@ -98,11 +98,10 @@
 
         <button onclick="format('removeFormat')">Clear</button>
     </div>
-</div>
+<!-- </div> -->
 
 
-        <div class="editor" contenteditable="true" aria-placeholder=" Why Not Share Your Story Here Today?">
-      </div>
+<div class="editor" contenteditable="true" id="editor" data-placeholder="Why Not Share Your Story Here Today?"></div>
    
         <div class="char-counter">0/10000</div>
         <button class="save-btn">Save</button>
@@ -128,11 +127,13 @@
                   <div class="journal-card">
                     <div class="emoji">❤️</div>
                     <div class="card-title">First day of school</div>
+                     <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
                   </div>
                 
                   <div class="journal-card">
                     <div class="emoji">❤️</div>
                     <div class="card-title">Second day of school</div>
+                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
                   </div>
 
                   
@@ -157,6 +158,7 @@
                   <div class="journal-card">
                     <div class="emoji">❤️</div>
                     <div class="card-title">Second day of school</div>
+
                   </div>
                   
                   <div class="journal-card">

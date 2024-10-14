@@ -16,6 +16,24 @@ function saveContent() {
     console.log('Saved Content: ', content);
     alert('Content saved! Check the console for the output.');
 }
+function saveContent() {
+    const content = editor.innerHTML;
+    console.log('Saved Content: ', content);
+    alert('Content saved! Check the console for the output.');
+}
+
+  // Function to check if the editor is empty
+  function checkPlaceholder() {
+    if (editor.innerHTML.trim() === '') {
+      editor.classList.add('empty');
+    } else {
+      editor.classList.remove('empty');
+    }
+  }
+
+  checkPlaceholder();
+
+  editor.addEventListener('input', checkPlaceholder);
 
 // toolbar
 function toggleToolbar() {
@@ -35,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const notificationPopup = document.getElementById('notification-popup');
 
     notificationBell.addEventListener('click', function () {
-        // Toggle the display of the notification popup
         if (notificationPopup.style.display === 'none' || notificationPopup.style.display === '') {
             notificationPopup.style.display = 'block';
         } else {
@@ -43,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Close the notification popup when clicking outside of it
+    // Close the notification popup 
     window.addEventListener('click', function (event) {
         if (!notificationBell.contains(event.target) && !notificationPopup.contains(event.target)) {
             notificationPopup.style.display = 'none';
@@ -53,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
  //return to journal-count
 function toogleReturn() {
-    // Assuming you want to toggle visibility or switch views to return to the journal wrapper
+   
     var journalWrapper = document.getElementById("journal");
     var journalContents = document.getElementById
     ("journal-contents")
@@ -61,8 +78,7 @@ function toogleReturn() {
     journalWrapper.style.display = 'block';
     journalContents.style.display = 'none';
     
-    // Alternatively, if you want to go back to a previous page:
-    // window.history.back();
+    
 }
 
 
@@ -82,14 +98,14 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault(); 
         
         if (journalSection.style.display === 'none' || journalSection.style.display === '') {
-            journalSection.style.display = 'block'; // Show journal
-            storySection.style.display = 'none'; // Hide story section
-            journalContents.style.display = 'none'; // Hide journal content section
-            goProSection.style.display = 'none'; // Hide GO PRO section
-            userProfileSection.style.display = 'none'; // Hide user profile section
+            journalSection.style.display = 'block'; 
+            storySection.style.display = 'none'; 
+            journalContents.style.display = 'none'; 
+            goProSection.style.display = 'none';
+            userProfileSection.style.display = 'none'; 
         } else {
-            journalSection.style.display = 'none'; // Hide journal
-            storySection.style.display = 'block'; // Show story section
+            journalSection.style.display = 'none'; 
+            storySection.style.display = 'block'; 
         }
     });
 
@@ -99,17 +115,15 @@ document.addEventListener('DOMContentLoaded', function () {
             const title = this.querySelector('.card-title').innerText;
             const emoji = this.querySelector('.emoji').innerText;
             
-            // Display journal content
             document.getElementById('selected-journal-title').innerText = emoji + " " + title;
             document.getElementById('selected-journal-content').innerText = "This is the content of " + title;
 
-            // Hide the journal section and show the content section
             journalSection.style.display = 'none';
             journalContents.style.display = 'block';
         });
     });
 
-    // Functions to toggle the Go Pro and User Profile sections
+    // F Go Pro and User Profile 
     function showGoProSection() {
         journalSection.style.display = 'none';
         journalContents.style.display = 'none';
@@ -126,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         userProfileSection.style.display = 'block';
     }
 
-    // You can add event listeners for the buttons or links to toggle these sections
+   
     document.getElementById('go-pro-toggle').addEventListener('click', showGoProSection);
     document.getElementById('user-profile-toggle').addEventListener('click', showUserProfileSection);
 });
