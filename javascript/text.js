@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // F Go Pro and User Profile 
+    // Go Pro and User Profile 
     function showGoProSection() {
         journalSection.style.display = 'none';
         journalContents.style.display = 'none';
@@ -168,21 +168,18 @@ const addFeelingBtn = document.getElementById('add-feeling-btn');
 
 let selectedEmoji = null;
 
-// Event listener to show the emoji picker if no emoji has been picked
 addFeelingBtn.addEventListener('click', function () {
     if (!selectedEmoji) {
-        emojiPicker.style.display = 'block'; // Show picker if no emoji is selected
+        emojiPicker.style.display = 'block'; selected
     }
 });
 
-// Event listener to select an emoji
 document.querySelectorAll('#emoji-picker .emoji').forEach(emoji => {
     emoji.addEventListener('click', function () {
         selectedEmoji = this.innerText;
         selectedEmojiDisplay.innerText = selectedEmoji;
-        displayedEmoji.innerText = selectedEmoji; // Display the chosen emoji
+        displayedEmoji.innerText = selectedEmoji; 
 
-        // Hide emoji picker after selection
         emojiPicker.style.display = 'none';
     });
 });

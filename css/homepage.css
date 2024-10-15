@@ -191,7 +191,6 @@ main {
 
 
 .toolbar {
-    width: 66%;
     position: relative;
     /* display: flex; */
     /* flex-wrap: wrap; */
@@ -256,9 +255,9 @@ main {
 #emoji-picker {
     display: flex;
     flex-direction: row;
-    position: fixed; 
+    position: absolute; 
     right: 500px;
-    top: 50px; 
+    bottom: 20px; 
 }
 
 #emoji-picker span {
