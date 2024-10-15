@@ -123,6 +123,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    journalCards.forEach(card => {
+        card.addEventListener('click', function () {
+            const title = this.querySelector('.card-title').innerText;
+            const emojii = this.querySelector('.emojii').innerText;
+            
+            document.getElementById('selected-journal-title').innerText = emojii + " " + title;
+            document.getElementById('selected-journal-content').innerText = "This is the content of " + title;
+
+            journalSection.style.display = 'none';
+            journalContents.style.display = 'block';
+        });
+    });
+
+
     // F Go Pro and User Profile 
     function showGoProSection() {
         journalSection.style.display = 'none';
@@ -144,6 +158,37 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('go-pro-toggle').addEventListener('click', showGoProSection);
     document.getElementById('user-profile-toggle').addEventListener('click', showUserProfileSection);
 });
+
+
+// emoji
+const emojiPicker = document.getElementById('emoji-picker');
+const selectedEmojiDisplay = document.getElementById('selected-emoji');
+const displayedEmoji = document.getElementById('displayed-emoji');
+const addFeelingBtn = document.getElementById('add-feeling-btn');
+
+let selectedEmoji = null;
+
+// Event listener to show the emoji picker if no emoji has been picked
+addFeelingBtn.addEventListener('click', function () {
+    if (!selectedEmoji) {
+        emojiPicker.style.display = 'block'; // Show picker if no emoji is selected
+    }
+});
+
+// Event listener to select an emoji
+document.querySelectorAll('#emoji-picker .emoji').forEach(emoji => {
+    emoji.addEventListener('click', function () {
+        selectedEmoji = this.innerText;
+        selectedEmojiDisplay.innerText = selectedEmoji;
+        displayedEmoji.innerText = selectedEmoji; // Display the chosen emoji
+
+        // Hide emoji picker after selection
+        emojiPicker.style.display = 'none';
+    });
+});
+
+
+
 
 
 // // Date
