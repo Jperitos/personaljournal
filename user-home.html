@@ -1,324 +1,352 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MindScript</title>
-    <link rel="stylesheet" href="css/homepage.css" />
-    <link rel="icon" href="image/book-reader-solid-24.png" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <!-- <img src="image/book-reader-solid-24.png" alt="MindScript Logo" class="logo-img" /> -->
-        <h1>MindScript</h1>
-      </div>
-<nav>
-    <nav class="nav-links">
-        <a href="user-home.html" class="nav-link">Home</a>
-        <a href="#" class="nav-link" id="journal-toggle">My Journal</a>
-      </nav>
-        
-      <div class="header-actions">
-        <div class="icons">
-          <div class="notification-bell" id="notification-bell">
-            <img src="image/bxs-bell.svg" alt="Notification">
-            <span class="notification-count" id="notification-count">3</span> <!-- Notification count -->
-        </div>
-           
-            <button id="go-pro-toggle" class="go-pro-btn">GO PRO</button>
-            <img src="image/bxs-user-circle (1).svg" alt="User" id="user-profile-toggle">
-            <button class="btnn"> <a href="index.html">Logout</a></button>
-          </div>
-    </div>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>MindScript</title>
+      <link rel="stylesheet" href="css/homepage.css" />
+      <link rel="icon" href="image/bxs-book-content.svg"/>
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
-</nav>
+    </head>
+    <body>
+      <header>
+        <div class="logo">
+          <!-- <img src="image/book-reader-solid-24.png" alt="MindScript Logo" class="logo-img" /> -->
+          <h1>MindScript</h1>
+        </div>
+  <nav>
+      <nav class="nav-links">
+          <a href="user-home.html" class="nav-link">Home</a>
+          <a href="#" class="nav-link" id="journal-toggle">My Journal</a>
+        </nav>
+          
+        <div class="header-actions">
+          <div class="icons">
+            <div class="notification-bell" id="notification-bell">
+              <img src="image/bxs-bell.svg" alt="Notification">
+              <span class="notification-count" id="notification-count">3</span> <!-- Notification count -->
+          </div>
+            
+              <button id="go-pro-toggle" class="go-pro-btn">GO PRO</button>
+              <img src="image/bxs-user-circle (1).svg" alt="User" id="user-profile-toggle">
+              <button class="btnn"> <a href="index.html">Logout</a></button>
+            </div>
+      </div>
+      
+  </nav>
 
-<!-- Notification Popup -->
-<div class="notification-popup" id="notification-popup" style="display: none;">
-  <h4>Notifications</h4>
-  <ul id="notification-list">
-      <li>You have a new message!</li>
-      <li>Your journal entry has been published.</li>
-      <li>You have a new follower!</li>
-  </ul>
-</div>
-</header>
+  <!-- Notification Popup -->
+  <div class="notification-popup" id="notification-popup" style="display: none;">
+    <h4>Notifications</h4>
+    <ul id="notification-list">
+        <li>You have a new message!</li>
+        <li>Your journal entry has been published.</li>
+        <li>You have a new follower!</li>
+    </ul>
+  </div>
+  </header>
 
-    <main>
-      <section class="story-section">
-        <!-- <h2>Welcome Damoslo!</h2>
-        <h5>Where Your Thoughts Find Their Story</h5> -->
+      <main>
+        <section class="story-section">
+          <!-- <h2>Welcome Damoslo!</h2>
+          <h5>Where Your Thoughts Find Their Story</h5> -->
 
-        <div id="emoji-picker" style="display: none;">
-          <div class="emoji-popup">
+          <div class="btn-emoji">
+            <button id="add-feeling-btn">Add Emoji</button>
+            
+            <p>Emoji: <span id="displayed-emoji">None</span></p>
+    
+            </div>
+
+          <div id="emoji-picker" style="display: none;">
+            <div class="emoji-popup">
               <p>Feeling: <span id="selected-emoji">None</span></p>
               <span class="emoji">😊</span>
               <span class="emoji">🔥</span>
               <span class="emoji">👍</span>
               <span class="emoji">🎉</span>
               <span class="emoji">❤️</span>
+            </div>
           </div>
-      </div>
-      
-      <button id="add-feeling-btn">Add Emoji</button>
-      
-      <p>Emoji: <span id="displayed-emoji">None</span></p>
-      
-      
-      
-        <input type="text" class="entry-title" placeholder="Entry Title">
-        <!-- <div class="date-display">
-          <span id="liveDate"></span>
-      </div> -->
-      <!-- <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button> -->
 
-<!-- <div class="toolbar-container hidden"> -->
+          
+        
+        
+        
+          <input type="text" class="entry-title" placeholder="Entry Title">
+          <!-- <div class="date-display">
+            <span id="liveDate"></span>
+        </div> -->
+        <!-- <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button> -->
+
+  <!-- <div class="toolbar-container hidden"> -->
+
     <div class="toolbar">
-        <label for="fontStyle">Font: </label>
-        <select id="fontStyle" onchange="format('fontName', this.value)">
-            <option value="Arial">Arial</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Times New Roman">Times New Roman</option>
-            <option value="Verdana">Verdana</option>
-        </select>
+      <!-- Button to trigger image input -->
+      <button onclick="document.getElementById('imageInput').click()">
+          <i class='bx bxs-image'></i>
+      </button>
+      <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="insertImage(this)">
 
-        <label for="fontSize">Size: </label>
-        <select id="fontSize" onchange="format('fontSize', this.value)">
-            <option value="1">10pt</option>
-            <option value="2">12pt</option>
-            <option value="3">14pt</option>
-            <option value="4">16pt</option>
-            <option value="5">18pt</option>
-            <option value="6">24pt</option>
-            <option value="7">30pt</option>
-            <option value="8">36pt</option>
-            <option value="9">48pt</option>
-            <option value="10">60pt</option>
-            <option value="11">72pt</option>
-            <option value="12">96pt</option>
-        </select>
+      <!-- Audio recording buttons -->
+      <button id="startRecording"><i class='bx bxs-microphone'></i></button>
+      <button id="stopRecording" disabled><i class='bx bx-stop'></i></button>
+      <button id="deleteAudio" disabled><i class='bx bxs-trash-alt'></i></button>
 
-        <button onclick="format('bold')"><strong>B</strong></button>
-        <button onclick="format('italic')"><em>I</em></button>
-        <button onclick="format('underline')"><u>U</u></button>
+      <!-- Font selection -->
+      <label for="fontStyle">Font: </label>
+      <select id="fontStyle" onchange="format('fontName', this.value)">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Impact">Impact</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Comic Sans MS">Comic Sans MS</option>
+        <option value="Lucida Console">Lucida Console</option>
+        <option value="Trebuchet MS">Trebuchet MS</option>
+        <option value="Segoe UI">Segoe UI</option>
+    </select>
+    
 
-        <button onclick="format('justifyLeft')"><i class='bx bx-align-left'></i></button>
-        <button onclick="format('justifyCenter')"><i class='bx bx-align-middle'></i></button>
-        <button onclick="format('justifyRight')"><i class='bx bx-align-right'></i></button>
+      <label for="fontSize">Size: </label>
+      <select id="fontSize" onchange="format('fontSize', this.value)">
+          <option value="1">10pt</option>
+          <option value="2">12pt</option>
+          <option value="3">14pt</option>
+          <option value="4">16pt</option>
+          <option value="5">18pt</option>
+          <option value="6">24pt</option>
+          <option value="7">30pt</option>
+          <option value="8">36pt</option>
+          <option value="9">48pt</option>
+          <option value="10">60pt</option>
+          <option value="11">72pt</option>
+          <option value="12">96pt</option>
+      </select>
 
-        <button onclick="format('insertOrderedList')">Ordered List</button>
-        <button onclick="format('insertUnorderedList')"><i class='bx bx-dots-vertical-rounded'></i></button>
+      <button onclick="format('bold')"><strong>B</strong></button>
+      <button onclick="format('italic')"><em>I</em></button>
+      <button onclick="format('underline')"><u>U</u></button>
 
-        <button onclick="format('createLink', prompt('Enter URL:'))">Link</button>
+      <button onclick="format('justifyLeft')"><i class='bx bx-align-left'></i></button>
+      <button onclick="format('justifyCenter')"><i class='bx bx-align-middle'></i></button>
+      <button onclick="format('justifyRight')"><i class='bx bx-align-right'></i></button>
 
-        <button onclick="format('removeFormat')">Clear</button>
-    </div>
+      <button onclick="format('insertOrderedList')"><i class='bx bx-list-ol'></i></button>
+      <button onclick="format('insertUnorderedList')"><i class='bx bx-list-ul'></i></button>
+
+      <button onclick="format('createLink', prompt('Enter URL:'))"><i class='bx bx-link-alt'></i></button>
+  </div>
 
 
 
-<div class="editor" contenteditable="true" id="editor" data-placeholder="Why Not Share Your Story Here Today?"></div>
-   
-        <div class="char-counter">0/10000</div>
-        <button class="save-btn">Save</button>
-  
-       
+
+  <div class="editor" contenteditable="true" id="editor" data-placeholder="Why Not Share Your Story Here Today?"></div>
+    
+          <div class="char-counter">0/10000</div>
+          <button class="save-btn">Save</button>
+        
+  </section>
+
+
+        <section id="journal" class="hidden">
+
+          <div class="journal-wrapper">
+
+              <div class="journal-header">
+                  <div class="journal-title">My Journal <span>(15)</span></div>
+                  <div>
+                    <div class="folder">
+                      <i class='bx bxs-folder'></i>
+                    </div>
+                    <input type="date" class="date-journal" placeholder="Date">
+
+                      <input type="text" class="searchbar-journal" placeholder="Search Title" >
+                  </div>
+              </div>
+              
+              <div class="journal-container">
+                    <div class="journal-card">
+                      <div class="emoji">❤️</div>
+                      <div class="card-title">First day of school</div>
+                      
+                    </div>
+                  
+                    <div class="journal-card">
+                      <div class="emojii">❤️</div>
+                      <div class="card-title">Second day of school</div>
+    
+                    </div>
+
+                    
+                    <div class="journal-card">
+                      <div class="emojii">👍</div>
+                      <div class="card-title">Second day of school</div>
+                      
+                    </div>
+
+                    
+                    <div class="journal-card">
+                      <div class="emojii">😊</div>
+                      <div class="card-title">Second day of school</div>
+                      
+                    </div>
+
+                    
+                    <div class="journal-card">
+                      <div class="emojii">❤️</div>
+                      <div class="card-title">Second day of school</div>
+                      
+                    </div>
+
+                    
+                    <div class="journal-card">
+                      <div class="emojii">👍</div>
+                      <div class="card-title">Second day of school</div>
+                      
+                    </div>
+                    
+                    <div class="journal-card">
+                      <div class="emojii">⭐</div>
+                      <div class="card-title">Second day of school</div>
+                      
+                    </div>
+                    
+                    <div class="journal-card">
+                      <div class="emojii">❤️</div>
+                      <div class="card-title">Second day of school</div>
+                      
+                    </div>
+                    
+                    <div class="journal-card">
+                      <div class="emojii">😊</div>
+                      <div class="card-title">Second day of school</div>
+                      
+                    </div>
+                    
+                    <div class="journal-card">
+                      <div class="emojii">🎉</div>
+                      <div class="card-title">Second day of school</div>
+                    
+                    </div>
+                    
+                    <div class="journal-card">
+                      <div class="emojii">❤️</div>
+                      <div class="card-title">Second day of school</div>
+                      
+                    </div>
+                    
+                    <div class="journal-card">
+                      <div class="emojii">🔥</div>
+                      <div class="card-title">Second day of school</div>
+                      
+                    </div>
+              </div>
+
+          </div>
+      
       </section>
+    
+      <section id="journal-contents" class="hidden">
+            
+          <div class="top-jcontent">
+          <i class='bx bx-left-arrow-alt' onclick="toogleReturn()"></i>
+              <h1>My Journal Entry # <span>1</span></h1>
+
+              <div class="icon-jcontent">
+                <i class='bx bxs-folder'></i>
+                <i class='bx bx-trash'></i>
+              </div>
+              
+          </div>
+      
+        <div class="journalContent-container">
+
+              <div class="header-journal-contents">
+                  <h1 id="selected-journal-title">My First Day of School</h1>
+                  <p>October 10, 2024</p>
+              </div>
+
+              <div id="selected-journal-content" class="selected-journal-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error sit doloribus reprehenderit? Aut obcaecati, dolorem earum ipsam sint tenetur quibusdam! Nesciunt magni eos ipsum eligendi eius amet quae expedita deserunt.</p>
+              </div>
+
+        </div>
+
+        <div class="button-journal-content">
+          <button class="saveChanges-btn">Save Changes</button>
+        </div>
+        
+      </section>
+      
+      <!-- GO PRO SECTION -->
+          <section id="go-pro-section" class="hidden">
+            <h2>Upgrade to GO PRO!</h2>
+            <p>Unlock premium features by upgrading your account.</p>
+            <ul>
+                <li>✔ Unlimited journal entries</li>
+                <li>✔ Custom themes for journals</li>
+                <li>✔ Advanced text formatting options</li>
+                <li>✔ Access to premium content or tools</li>
+                <li>✔ Offline access</li>
+            </ul>
+            <button id="subscribe-btn">Subscribe Now</button>
+            <div id="payment-message" class="hidden"></div>
+          </section>
 
 
-      <section id="journal" class="hidden">
+      <!-- USER PROFILE SETTINGS -->
+            <section id="user-profile" class="hidden">
+              <div class="profile-container">
+                <div class="header">
+                    <img src="image/profile pic.jpg" alt="Profile Picture" class="profile-picture">
+                    <div class="greeting">
+                        <h2>Hi Jera Hemuah!</h2>
+                        <p>Upload your profile picture.</p>
+                    </div>
+                    <button class="update-btn">Update Profile Picture</button>
+                </div>
+            
+                <div class="form-container">
 
-        <div class="journal-wrapper">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" value="Sofia Smith" />
+                    </div>
 
-            <div class="journal-header">
-                <div class="journal-title">My Journal <span>(15)</span></div>
-                <div>
-                  <input type="date" class="date-journal" placeholder="Date">
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" value="Sitio purok tambayan cap" />
+                    </div>
 
-                    <input type="text" class="searchbar-journal" placeholder="Search Title" >
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" value="Fyanggi" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" id="phone" value="09104467840" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" value="sofiaandress@gmail.com" />
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <input type="text" id="gender" value="Girl" />
+                    </div>
+
+                    <button class="edit-btn">Edit Profile</button>
                 </div>
             </div>
-            
-            <div class="journal-container">
-                  <div class="journal-card">
-                    <div class="emoji">❤️</div>
-                    <div class="card-title">First day of school</div>
-                     <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-                
-                  <div class="journal-card">
-                    <div class="emojii">❤️</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-
-                  
-                  <div class="journal-card">
-                    <div class="emojii">👍</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-
-                  
-                  <div class="journal-card">
-                    <div class="emojii">😊</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-
-                  
-                  <div class="journal-card">
-                    <div class="emojii">❤️</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-
-                  
-                  <div class="journal-card">
-                    <div class="emojii">👍</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-                  
-                  <div class="journal-card">
-                    <div class="emojii">⭐</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-                  
-                  <div class="journal-card">
-                    <div class="emojii">❤️</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-                  
-                  <div class="journal-card">
-                    <div class="emojii">😊</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-                  
-                  <div class="journal-card">
-                    <div class="emojii">🎉</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-                  
-                  <div class="journal-card">
-                    <div class="emojii">❤️</div>
-                    <div class="card-title">Second day of school</div>
-                    <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-                  
-                  <div class="journal-card">
-                    <div class="emojii">🔥</div>
-                    <div class="card-title">Second day of school</div>
-                     <button class="toggle-toolbar-btn" onclick="toggleToolbar()">•••</button>
-                  </div>
-            </div>
-
-        </div>
-     
-    </section>
-  
-    <section id="journal-contents" class="hidden">
-           
-        <div class="top-jcontent">
-         <i class='bx bx-left-arrow-alt' onclick="toogleReturn()"></i>
-            <h1>My Journal Entry # <span>1</span></h1>
-
-            <div class="icon-jcontent">
-              <i class='bx bxs-folder'></i>
-              <i class='bx bx-trash'></i>
-            </div>
-            
-        </div>
-     
-      <div class="journalContent-container">
-
-            <div class="header-journal-contents">
-                <h1 id="selected-journal-title">My First Day of School</h1>
-                <p>October 10, 2024</p>
-            </div>
-
-            <div id="selected-journal-content" class="selected-journal-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error sit doloribus reprehenderit? Aut obcaecati, dolorem earum ipsam sint tenetur quibusdam! Nesciunt magni eos ipsum eligendi eius amet quae expedita deserunt.</p>
-            </div>
-
-      </div>
-
-      <div class="button-journal-content">
-        <button class="saveChanges-btn">Save Changes</button>
-      </div>
-      
-    </section>
-    
-    <!-- GO PRO SECTION -->
-        <section id="go-pro-section" class="hidden">
-          <h2>Upgrade to GO PRO!</h2>
-          <p>Unlock premium features by upgrading your account.</p>
-          <ul>
-              <li>✔ Unlimited journal entries</li>
-              <li>✔ Custom themes for journals</li>
-              <li>✔ Advanced text formatting options</li>
-              <li>✔ Access to premium content or tools</li>
-              <li>✔ Offline access</li>
-          </ul>
-          <button id="subscribe-btn">Subscribe Now</button>
-          <div id="payment-message" class="hidden"></div>
-        </section>
+            </section>
+      </main>
 
 
-    <!-- USER PROFILE SETTINGS -->
-          <section id="user-profile" class="hidden">
-            <div class="profile-container">
-              <div class="header">
-                  <img src="image/profile pic.jpg" alt="Profile Picture" class="profile-picture">
-                  <div class="greeting">
-                      <h2>Hi Jera Hemuah!</h2>
-                      <p>Upload your profile picture.</p>
-                  </div>
-                  <button class="update-btn">Update Profile Picture</button>
-              </div>
-          
-              <div class="form-container">
-
-                  <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" id="name" value="Sofia Smith" />
-                  </div>
-
-                  <div class="form-group">
-                      <label for="address">Address</label>
-                      <input type="text" id="address" value="Sitio purok tambayan cap" />
-                  </div>
-
-                  <div class="form-group">
-                      <label for="username">Username</label>
-                      <input type="text" id="username" value="Fyanggi" />
-                  </div>
-
-                  <div class="form-group">
-                      <label for="phone">Phone Number</label>
-                      <input type="text" id="phone" value="09104467840" />
-                  </div>
-                  <div class="form-group">
-                      <label for="email">Email Address</label>
-                      <input type="email" id="email" value="sofiaandress@gmail.com" />
-                  </div>
-                  <div class="form-group">
-                      <label for="gender">Gender</label>
-                      <input type="text" id="gender" value="Girl" />
-                  </div>
-
-                  <button class="edit-btn">Edit Profile</button>
-              </div>
-          </div>
-          </section>
-    </main>
-
-
-    <script src="javascript/text.js"></script>
-  </body>
-</html>
+      <script src="javascript/text.js"></script>
+    </body>
+  </html>

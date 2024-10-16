@@ -88,7 +88,7 @@ nav {
 
 /* notifications  */
 .header-actions {
-    position: relative; /* To position the notification popup */
+    position: relative; 
 }
 
 .notification-bell {
@@ -114,8 +114,8 @@ nav {
     background-color: white;
     border: 1px solid #ccc;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure it appears above other elements */
-    width: 200px; /* Adjust width as needed */
+    z-index: 1000;
+    width: 200px; 
     padding: 10px;
 }
 
@@ -240,64 +240,107 @@ main {
 }
 
 .entry-title {
-    position: relative;
-    bottom: 45px;
-    right: 150px;
-    float: left;
-    /* right: 59.3%; */
-    width: 30%;
+    position: absolute;
+    bottom: 830px;
+    right: 1180px;
+    width: 18%;
     padding: 10px;
     font-size: 1em;
     border: none;
-    /* border: 1px solid #ccc; */
-    /* border-radius: 4px; */
-}   
+}  
+
 #emoji-picker {
-    display: flex;
-    flex-direction: row;
-    position: absolute; 
-    right: 500px;
-    bottom: 20px; 
+  display: none; 
+  position: absolute;
+  z-index: 100;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 #emoji-picker span {
-    font-size: 16px; 
+  font-size: 24px;
+  margin: 5px;
+  cursor: pointer;
 }
+
+.btn-emoji{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    float: left;
+    gap: 10px;
+    right: 180px;
+    bottom: 45px;
+}
+.btn-emoji span{
+    font: 10px;
+}
+.btn-emoji p{
+    position: relative;
+    top: 8px;
+    font: 12px;
+}
+
+#add-feeling-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#add-feeling-btn:hover {
+  background-color: #45a049;
+}
+
 
 
 .toolbar {
-    background-color: #ffffff;
-    padding: 10px;
-    margin-bottom: 15px;
+    width: 60%;
     display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative; 
+    background-color: #ffffff; 
+    padding: 5px; 
+    right: 150px;
+    gap: 5px; 
+    /* border: 1px solid #ccc; */
+    border-radius: 4px; 
+}
+.toolbar i{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-
 }
-
-.toolbar select,
 .toolbar button {
-    background-color: #fff;
-    border: none;
-    padding: 8px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 14px;
+    background-color: #fff; 
+    color: black; 
+    border: none; 
+    border-radius: 4px; 
+    padding: 8px 12px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
 }
 
-.toolbar button:hover,
-.toolbar select:hover {
-    background-color: #ddd;
+.toolbar select {
+    padding: 6px; 
+    border-radius: 4px;
+    border: 1px solid #ccc; 
 }
+
 
 .editor {
-    min-height: 800px;
+    min-height: 700px;
     max-width: 1800px;
     width: 200%;
     padding: 15px;
     position: relative;
     right: 150px;
-    bottom: 65px;
+    bottom: 45px;
     margin-inline: auto;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -394,7 +437,16 @@ main {
     align-items: center;
     padding: 10px;
     background-color: white;
-    
+}
+
+.folder{
+    display: flex;
+    justify-content: center;
+    width: 5%;
+    position: relative;
+    right: 50px;
+    top: 33px;
+    font-size: 35px;
 }
 
 .journal-title {
@@ -579,6 +631,7 @@ main {
 .update-btn:hover {
     background-color: #0A2B4C;
 }
+
 /* container sa ubos settings */
 .form-container {
     display: flex;

@@ -81,13 +81,12 @@ margin-left: 78px;
 
 
 /* sections */
-/* Hide all sections by default */
 section {
     display: none;
    
 }
 
-/* Show the home section by default */
+/* home section */
 #home-section {
     display: block;
     padding: 20px;
@@ -132,7 +131,7 @@ section {
 
 }
 
-/* color couunt section */
+/* color count section */
 .count:nth-child(1) {
     background-color:#9fc2ce;
 /* background-image: linear-gradient(160deg, #25afff 26%, #02b1a1 94%); */
@@ -145,7 +144,7 @@ section {
     background-color:#9fc2ce;
 }
 
-/* Table and container adjustments */
+/* Table and container*/
 .table-container{
     width: 100%;
     margin: 20px 0;
@@ -160,6 +159,7 @@ section {
     margin-bottom: 20px; 
     color: #0D3A64;
 }
+
 /* imgae count */
 .image-count{
     width: 100px;
@@ -227,7 +227,7 @@ section {
         color: #0D3A64;
     }
 }
-/* buttons on Account Section */
+/* button on Account Section */
 .account-container button{
     border-style: solid;
     padding: 5px;
@@ -337,7 +337,7 @@ section {
     cursor: pointer;
 }
 
-/* Responsive design for small screens */
+
 @media screen and (max-width: 600px) {
     th, td {
         font-size: 12px;
